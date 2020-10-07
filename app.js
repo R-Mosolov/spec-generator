@@ -25,7 +25,7 @@ const doc = new Document({
                 paragraph: {
                   indent: { 
                     left: 720, 
-                    hanging: 1200 
+                    hanging: 350 
                   }
                 }
               }
@@ -36,7 +36,7 @@ const doc = new Document({
               text: "%2.",
               style: {
                 paragraph: {
-                  indent: { left: 1440, hanging: 980 }
+                  indent: { left: 1440, hanging: 350 }
                 }
               }
             },
@@ -46,7 +46,7 @@ const doc = new Document({
               text: "%3)",
               style: {
                 paragraph: {
-                  indent: { left: 2160, hanging: 1700 }
+                  indent: { left: 2160, hanging: 350 }
                 }
               }
             },
@@ -56,7 +56,7 @@ const doc = new Document({
               text: "%4)",
               style: {
                 paragraph: {
-                  indent: { left: 2880, hanging: 2420 }
+                  indent: { left: 2880, hanging: 350 }
                 }
               }
             }
@@ -155,6 +155,9 @@ doc.addSection({
           numbering: {
             reference: "numbering",
             level: 1
+          },
+          indent: {
+            left: 550,
           }
         }),
         new Paragraph({
@@ -162,6 +165,9 @@ doc.addSection({
           numbering: {
             reference: "numbering",
             level: 1
+          },
+          indent: {
+            left: 550,
           }
         }),
         new Paragraph({
@@ -169,44 +175,19 @@ doc.addSection({
           numbering: {
             reference: "numbering",
             level: 2
+          },
+          indent: {
+            left: 800,
           }
         }),
         new Paragraph({
-          text: "Item 1",
-          bullet: {
-            level: 0
-          }
-        }),
-        new Paragraph({
-          text: "Item 1.1",
-          bullet: {
-            level: 1
-          }
-        }),
-        new Paragraph({
-          text: "Item 1.1.1",
-          bullet: {
-            level: 2
-          }
-        }),
-        new Paragraph({
-          text: "Item 1.1.1.1",
-          bullet: {
-            level: 3
-          }
-        }),
-        new Paragraph({
-          text: "Item 1.1.1.1 (Shift + Enter)",
+          text: "Item 1.2.1.1 (Shift + Enter)",
           numbering: {
             reference: "numbering",
             level: 3
-          }
-        }),
-        new Paragraph({
-          text: "Back to level 1",
-          numbering: {
-            reference: "numbering",
-            level: 1
+          },
+          indent: {
+            left: 1150,
           }
         }),
         new Paragraph({
@@ -214,6 +195,9 @@ doc.addSection({
           numbering: {
             reference: "numbering",
             level: 0
+          },
+          indent: {
+            left: 0,
           }
         }),
         new Paragraph(image),
