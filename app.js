@@ -15,7 +15,7 @@ const doc = new Document({
     numbering: {
       config: [
         {
-          reference: "my-crazy-numbering",
+          reference: "numbering",
           levels: [
             {
               level: 0,
@@ -23,7 +23,10 @@ const doc = new Document({
               text: "%1",
               style: {
                 paragraph: {
-                  indent: { left: 720, hanging: 260 }
+                  indent: { 
+                    left: 720, 
+                    hanging: 1200 
+                  }
                 }
               }
             },
@@ -87,25 +90,6 @@ doc.addSection({
         new Paragraph({
             children: [
                 new TextRun("Hello World"),
-                new TextRun({
-                    text: "Foo Bar",
-                    bold: true,
-                }),
-                new TextRun({
-                    text: "\tGithub is the best",
-                    bold: true,
-                }),
-                new Table({
-                    rows: [
-                        new TableRow({
-                            children: [
-                                new TableCell({
-                                    children: [new Paragraph("hello")],
-                                }),
-                            ],
-                        }),
-                    ],
-                })
             ],
         }),
         new Table({
@@ -130,97 +114,109 @@ doc.addSection({
             }
         }),
         new Paragraph({
-            text: "Bullet points",
+            text: "Bullet points 1",
             bullet: {
                 level: 0, // How deep you want the bullet to me
             },
+            indent: {
+              left: 0,
+            }
         }),
         new Paragraph({
-            text: "Bullet points",
+            text: "Bullet points 2",
             bullet: {
                 level: 1, // How deep you want the bullet to me
             },
+            indent: {
+              left: 550,
+            }
         }),
         new Paragraph({
-            text: "Bullet points",
+            text: "Bullet points 3",
             bullet: {
                 level: 2, // How deep you want the bullet to me
             },
+            indent: {
+              left: 800,
+            }
         }),
         new Paragraph({
-            text: "Hey you",
+            text: "Item 1",
             numbering: {
-              reference: "my-crazy-numbering",
+              reference: "numbering",
               level: 0
+            },
+            indent: {
+              left: 0,
             }
-          }),
-          new Paragraph({
-            text: "What's up fam",
-            numbering: {
-              reference: "my-crazy-numbering",
-              level: 1
-            }
-          }),
-          new Paragraph({
-            text: "Hello World 2",
-            numbering: {
-              reference: "my-crazy-numbering",
-              level: 1
-            }
-          }),
-          new Paragraph({
-            text: "Yeah boi",
-            numbering: {
-              reference: "my-crazy-numbering",
-              level: 2
-            }
-          }),
-          new Paragraph({
-            text: "Hey you",
-            bullet: {
-              level: 0
-            }
-          }),
-          new Paragraph({
-            text: "What's up fam",
-            bullet: {
-              level: 1
-            }
-          }),
-          new Paragraph({
-            text: "Hello World 2",
-            bullet: {
-              level: 2
-            }
-          }),
-          new Paragraph({
-            text: "Yeah boi",
-            bullet: {
-              level: 3
-            }
-          }),
-          new Paragraph({
-            text: "101 MSXFM",
-            numbering: {
-              reference: "my-crazy-numbering",
-              level: 3
-            }
-          }),
-          new Paragraph({
-            text: "back to level 1",
-            numbering: {
-              reference: "my-crazy-numbering",
-              level: 1
-            }
-          }),
-          new Paragraph({
-            text: "back to level 0",
-            numbering: {
-              reference: "my-crazy-numbering",
-              level: 0
-            }
-          }),
-          new Paragraph(image),
+        }),
+        new Paragraph({
+          text: "Item 1.1",
+          numbering: {
+            reference: "numbering",
+            level: 1
+          }
+        }),
+        new Paragraph({
+          text: "Item 1.2",
+          numbering: {
+            reference: "numbering",
+            level: 1
+          }
+        }),
+        new Paragraph({
+          text: "Item 1.2.1",
+          numbering: {
+            reference: "numbering",
+            level: 2
+          }
+        }),
+        new Paragraph({
+          text: "Item 1",
+          bullet: {
+            level: 0
+          }
+        }),
+        new Paragraph({
+          text: "Item 1.1",
+          bullet: {
+            level: 1
+          }
+        }),
+        new Paragraph({
+          text: "Item 1.1.1",
+          bullet: {
+            level: 2
+          }
+        }),
+        new Paragraph({
+          text: "Item 1.1.1.1",
+          bullet: {
+            level: 3
+          }
+        }),
+        new Paragraph({
+          text: "Item 1.1.1.1 (Shift + Enter)",
+          numbering: {
+            reference: "numbering",
+            level: 3
+          }
+        }),
+        new Paragraph({
+          text: "Back to level 1",
+          numbering: {
+            reference: "numbering",
+            level: 1
+          }
+        }),
+        new Paragraph({
+          text: "Back to level 0",
+          numbering: {
+            reference: "numbering",
+            level: 0
+          }
+        }),
+        new Paragraph(image),
     ],
 });
 
