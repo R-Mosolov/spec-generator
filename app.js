@@ -1,11 +1,14 @@
 // Simple example to add text to a document
 // Import from 'docx' rather than '../build' if you install from npm
 import * as fs from "fs";
-import pkg from 'docx';
+import pkg from "docx";
+// import simpleImage from "./data/images/simple-image.png";
+// import simpleImage2 from "./data/images/simple-image-2.jpg";
 const { 
     Document, Packer, Paragraph, TextRun, 
     Table, TableRow, TableCell, 
-    Header, Footer
+    Header, Footer,
+    Media
 } = pkg;
 
 const doc = new Document({
@@ -60,6 +63,7 @@ const doc = new Document({
     }
 });
 
+const image = pkg.Media.addImage(doc, fs.readFileSync("./data/images/simple-image-3.jpeg"));
 const arr = [1, 2, 3];
 const obj = [
     { name: "Roman", age: 25 },
@@ -215,10 +219,11 @@ doc.addSection({
               reference: "my-crazy-numbering",
               level: 0
             }
-          })
+          }),
+          new Paragraph(image),
     ],
 });
 
 Packer.toBuffer(doc).then((buffer) => {
-    fs.writeFileSync(`./data/test-spec-${Date.now()}.docx`, buffer);
+    fs.writeFileSync(`./data/generated-specs/test-spec-${Date.now()}.docx`, buffer);
 });
